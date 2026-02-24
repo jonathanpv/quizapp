@@ -28,18 +28,19 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height */
   overflow: hidden;
-  position: fixed; /* Prevent scrolling/bouncing */
+  position: fixed;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
 }
 
-/* For safe area spacing on iOS */
 #ui-layer {
+  /* Use safe-area-inset and ensure it doesn't push content off-screen */
   padding-top: env(safe-area-inset-top, 24px);
   padding-bottom: env(safe-area-inset-bottom, 24px);
   padding-left: env(safe-area-inset-left, 24px);
   padding-right: env(safe-area-inset-right, 24px);
+  height: 100dvh;
 }

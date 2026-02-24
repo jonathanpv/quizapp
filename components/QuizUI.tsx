@@ -29,8 +29,8 @@ export default function QuizUI({
     const progress = (currentLvlIndex / totalLevels) * 100;
 
     return (
-        <div id="ui-layer" className="absolute inset-0 pointer-events-none flex flex-col justify-between p-6 box-border">
-            <div className="header-container absolute top-5 left-0 w-full flex flex-col items-center gap-1.5">
+        <div id="ui-layer" className="fixed inset-0 pointer-events-none flex flex-col justify-between box-border">
+            <div className="header-container relative top-0 left-0 w-full flex flex-col items-center gap-1.5 py-4">
                 <div className="progress-bg h-3.5 w-full max-w-[220px] bg-gray-100 rounded-full overflow-hidden shadow-inner">
                     <div 
                         id="progress-bar" 
@@ -44,12 +44,12 @@ export default function QuizUI({
             </div>
             
             {!isComplete && (
-                <div id="q-text" className="absolute top-[90px] left-0 w-full text-center text-2xl font-extrabold transition-opacity duration-300 pointer-events-none" style={{ color: level.theme }}>
+                <div id="q-text" className="absolute top-[100px] left-0 w-full text-center text-2xl px-6 font-extrabold transition-opacity duration-300 pointer-events-none" style={{ color: level.theme }}>
                     {level.prompt}
                 </div>
             )}
 
-            <div className="action-area pointer-events-auto flex justify-center mb-2.5 w-full mt-auto">
+            <div className="action-area pointer-events-auto flex justify-center w-full mt-auto mb-4 px-6 pb-[env(safe-area-inset-bottom,0px)]">
                 <button 
                     id="check-btn" 
                     onClick={onCheck}

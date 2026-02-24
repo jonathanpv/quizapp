@@ -38,7 +38,7 @@ export default function Home() {
     }, [handleMistake]);
 
     return (
-        <main className="relative w-screen h-screen bg-white">
+        <main className="relative w-screen h-dvh bg-white overflow-hidden">
             <CanvasQuiz 
                 level={level}
                 isComplete={isComplete}
