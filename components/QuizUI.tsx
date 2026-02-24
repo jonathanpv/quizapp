@@ -31,7 +31,7 @@ export default function QuizUI({
     return (
         <div id="ui-layer" className="fixed inset-0 pointer-events-none flex flex-col justify-between box-border">
             {/* Header: Progress Bar only */}
-            <div className="header-container relative top-0 left-0 w-full flex flex-col items-center pt-8 pb-4 px-6">
+            <div className="header-container relative top-0 left-0 w-full flex flex-col items-center pt-[env(safe-area-inset-top,32px)] pb-4 px-6">
                 <div className="progress-container relative w-full max-w-[280px]">
                     {/* Progress Bar with Outline and Video Game Style */}
                     <div className="progress-bg h-6 w-full bg-gray-100 rounded-full overflow-hidden border-4 border-gray-200">
@@ -53,13 +53,13 @@ export default function QuizUI({
             </div>
             
             {!isComplete && (
-                <div id="q-text" className="absolute top-[160px] left-0 w-full text-center text-2xl px-8 font-extrabold transition-opacity duration-300 pointer-events-none" style={{ color: level.theme }}>
+                <div id="q-text" className="absolute top-[180px] left-0 w-full text-center text-2xl px-8 font-extrabold transition-opacity duration-300 pointer-events-none" style={{ color: level.theme }}>
                     {level.prompt}
                 </div>
             )}
 
-            {/* Action Area with more bottom padding */}
-            <div className="action-area pointer-events-auto flex justify-center w-full mt-auto mb-10 px-6 pb-[env(safe-area-inset-bottom,20px)]">
+            {/* Action Area with safer bottom spacing */}
+            <div className="action-area pointer-events-auto flex justify-center w-full mt-auto mb-6 px-6 pb-[env(safe-area-inset-bottom,16px)]">
                 <button 
                     id="check-btn" 
                     onClick={onCheck}
