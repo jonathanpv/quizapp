@@ -9,7 +9,7 @@ const nunito = Nunito({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FF3366",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -39,7 +39,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Additional PWA tags not yet in Metadata object for some Next versions */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
